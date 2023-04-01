@@ -1,6 +1,8 @@
 <?php
 
+use App\Http\Controllers\HomepageController;
 use App\Http\Controllers\ProfileController;
+use App\Http\Controllers\ServiceController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -28,19 +30,16 @@ Route::middleware('auth')->group(function () {
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
 });
 
-Route::get('/home', function () {
-    return view('index');
-})->middleware('auth');
+Route::get('/home', [HomepageController::class, 'index'])->middleware('auth');
 
 // Route::get('/dashbord', function(){
 // return view('admin.dashbord');
 // })->middleware('auth');
 
-Route::get('/dashbord/services', function(){
-    return view('admin.services.create');
-    })->middleware('auth');
+Route::resource('/dashbord/services', ServiceController::class)
+    ->middleware('auth');
 
 
 
 
-require __DIR__.'/auth.php';
+require __DIR__ . '/auth.php';

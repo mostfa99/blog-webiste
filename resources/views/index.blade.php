@@ -41,9 +41,7 @@
                         <a class="navbar-brand" href="index.html">
                             <img src="{{asset('assets/front/images/white-logo.svg')}}" alt="Logo" />
                         </a>
-                        <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
-                            data-bs-target="#navbarNine" aria-controls="navbarNine" aria-expanded="false"
-                            aria-label="Toggle navigation">
+                        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNine" aria-controls="navbarNine" aria-expanded="false" aria-label="Toggle navigation">
                             <span class="toggler-icon"></span>
                             <span class="toggler-icon"></span>
                             <span class="toggler-icon"></span>
@@ -91,8 +89,7 @@
                             things.
                         </p>
                         <div class="button">
-                            <a href="https://www.youtube.com/watch?v=r44RKWyfcFw&fbclid=IwAR21beSJORalzmzokxDRcGfkZA1AtRTE__l5N4r09HcGS5Y6vOluyouM9EM"
-                                class="glightbox video-button">
+                            <a href="https://www.youtube.com/watch?v=r44RKWyfcFw&fbclid=IwAR21beSJORalzmzokxDRcGfkZA1AtRTE__l5N4r09HcGS5Y6vOluyouM9EM" class="glightbox video-button">
                                 <span class="btn icon-btn rounded-full">
                                     <i class="lni lni-play"></i>
                                 </span>
@@ -118,8 +115,7 @@
             <div class="row align-items-center">
                 <div class="col-lg-6 col-12">
                     <div class="about-image-five">
-                        <svg class="shape" width="106" height="134" viewBox="0 0 106 134" fill="none"
-                            xmlns="http://www.w3.org/2000/svg">
+                        <svg class="shape" width="106" height="134" viewBox="0 0 106 134" fill="none" xmlns="http://www.w3.org/2000/svg">
                             <circle cx="1.66654" cy="1.66679" r="1.66667" fill="#DADADA" />
                             <circle cx="1.66654" cy="16.3335" r="1.66667" fill="#DADADA" />
                             <circle cx="1.66654" cy="31.0001" r="1.66667" fill="#DADADA" />
@@ -211,20 +207,13 @@
                         <div class="about-five-tab">
                             <nav>
                                 <div class="nav nav-tabs" id="nav-tab" role="tablist">
-                                    <button class="nav-link active" id="nav-who-tab" data-bs-toggle="tab"
-                                        data-bs-target="#nav-who" type="button" role="tab" aria-controls="nav-who"
-                                        aria-selected="true">Who We Are</button>
-                                    <button class="nav-link" id="nav-vision-tab" data-bs-toggle="tab"
-                                        data-bs-target="#nav-vision" type="button" role="tab" aria-controls="nav-vision"
-                                        aria-selected="false">our Vision</button>
-                                    <button class="nav-link" id="nav-history-tab" data-bs-toggle="tab"
-                                        data-bs-target="#nav-history" type="button" role="tab"
-                                        aria-controls="nav-history" aria-selected="false">our History</button>
+                                    <button class="nav-link active" id="nav-who-tab" data-bs-toggle="tab" data-bs-target="#nav-who" type="button" role="tab" aria-controls="nav-who" aria-selected="true">Who We Are</button>
+                                    <button class="nav-link" id="nav-vision-tab" data-bs-toggle="tab" data-bs-target="#nav-vision" type="button" role="tab" aria-controls="nav-vision" aria-selected="false">our Vision</button>
+                                    <button class="nav-link" id="nav-history-tab" data-bs-toggle="tab" data-bs-target="#nav-history" type="button" role="tab" aria-controls="nav-history" aria-selected="false">our History</button>
                                 </div>
                             </nav>
                             <div class="tab-content" id="nav-tabContent">
-                                <div class="tab-pane fade show active" id="nav-who" role="tabpanel"
-                                    aria-labelledby="nav-who-tab">
+                                <div class="tab-pane fade show active" id="nav-who" role="tabpanel" aria-labelledby="nav-who-tab">
                                     <p>It is a long established fact that a reader will be distracted by the readable
                                         content of a page
                                         when
@@ -236,8 +225,7 @@
                                         form,
                                         by injected humour.</p>
                                 </div>
-                                <div class="tab-pane fade" id="nav-vision" role="tabpanel"
-                                    aria-labelledby="nav-vision-tab">
+                                <div class="tab-pane fade" id="nav-vision" role="tabpanel" aria-labelledby="nav-vision-tab">
                                     <p>It is a long established fact that a reader will be distracted by the readable
                                         content of a page
                                         when
@@ -249,8 +237,7 @@
                                         form,
                                         by injected humour.</p>
                                 </div>
-                                <div class="tab-pane fade" id="nav-history" role="tabpanel"
-                                    aria-labelledby="nav-history-tab">
+                                <div class="tab-pane fade" id="nav-history" role="tabpanel" aria-labelledby="nav-history-tab">
                                     <p>It is a long established fact that a reader will be distracted by the readable
                                         content of a page
                                         when
@@ -297,90 +284,19 @@
         <!--======  End Section Title Five ======-->
         <div class="container">
             <div class="row">
+                @foreach ($services as $service )
                 <div class="col-lg-4 col-md-6">
                     <div class="single-services">
                         <div class="service-icon">
                             <i class="lni lni-capsule"></i>
                         </div>
                         <div class="service-content">
-                            <h4>Refreshing Design</h4>
-                            <p>
-                                Lorem ipsum dolor sit amet, adipscing elitr, sed diam nonumy
-                                eirmod tempor ividunt labor dolore magna.
-                            </p>
+                            <h4>{{$service->title}}</h4>
+                            <p>{{$service->description}}</p>
                         </div>
                     </div>
                 </div>
-                <div class="col-lg-4 col-md-6">
-                    <div class="single-services">
-                        <div class="service-icon">
-                            <i class="lni lni-bootstrap"></i>
-                        </div>
-                        <div class="service-content">
-                            <h4>Solid Bootstrap 5</h4>
-                            <p>
-                                Lorem ipsum dolor sit amet, adipscing elitr, sed diam nonumy
-                                eirmod tempor ividunt labor dolore magna.
-                            </p>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-4 col-md-6">
-                    <div class="single-services">
-                        <div class="service-icon">
-                            <i class="lni lni-shortcode"></i>
-                        </div>
-                        <div class="service-content">
-                            <h4>100+ Components</h4>
-                            <p>
-                                Lorem ipsum dolor sit amet, adipscing elitr, sed diam nonumy
-                                eirmod tempor ividunt labor dolore magna.
-                            </p>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-4 col-md-6">
-                    <div class="single-services">
-                        <div class="service-icon">
-                            <i class="lni lni-dashboard"></i>
-                        </div>
-                        <div class="service-content">
-                            <h4>Speed Optimized</h4>
-                            <p>
-                                Lorem ipsum dolor sit amet, adipscing elitr, sed diam nonumy
-                                eirmod tempor ividunt labor dolore magna.
-                            </p>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-4 col-md-6">
-                    <div class="single-services">
-                        <div class="service-icon">
-                            <i class="lni lni-layers"></i>
-                        </div>
-                        <div class="service-content">
-                            <h4>Fully Customizable</h4>
-                            <p>
-                                Lorem ipsum dolor sit amet, adipscing elitr, sed diam nonumy
-                                eirmod tempor ividunt labor dolore magna.
-                            </p>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-4 col-md-6">
-                    <div class="single-services">
-                        <div class="service-icon">
-                            <i class="lni lni-reload"></i>
-                        </div>
-                        <div class="service-content">
-                            <h4>Regular Updates</h4>
-                            <p>
-                                Lorem ipsum dolor sit amet, adipscing elitr, sed diam nonumy
-                                eirmod tempor ividunt labor dolore magna.
-                            </p>
-                        </div>
-                    </div>
-                </div>
+                @endforeach
             </div>
         </div>
     </section>
@@ -415,8 +331,7 @@
                     <!-- Single News -->
                     <div class="single-news">
                         <div class="image">
-                            <a href="javascript:void(0)"><img class="thumb"
-                                    src="{{asset('assets/front/images/blog/1.jpg')}}" alt="Blog" /></a>
+                            <a href="javascript:void(0)"><img class="thumb" src="{{asset('assets/front/images/blog/1.jpg')}}" alt="Blog" /></a>
                             <div class="meta-details">
                                 <img class="thumb" src="{{asset('assets/front/images/blog/b6.jpg')}}" alt="Author" />
                                 <span>BY TIM NORTON</span>
@@ -439,8 +354,7 @@
                     <!-- Single News -->
                     <div class="single-news">
                         <div class="image">
-                            <a href="javascript:void(0)"><img class="thumb"
-                                    src="{{asset('assets/front/images/blog/2.jpg')}}" alt="Blog" /></a>
+                            <a href="javascript:void(0)"><img class="thumb" src="{{asset('assets/front/images/blog/2.jpg')}}" alt="Blog" /></a>
                             <div class="meta-details">
                                 <img class="thumb" src="{{asset('assets/front/images/blog/b6.jpg')}}" alt="Author" />
                                 <span>BY TIM NORTON</span>
@@ -465,8 +379,7 @@
                     <!-- Single News -->
                     <div class="single-news">
                         <div class="image">
-                            <a href="javascript:void(0)"><img class="thumb"
-                                    src="{{asset('assets/front/images/blog/3.jpg')}}" alt="Blog" /></a>
+                            <a href="javascript:void(0)"><img class="thumb" src="{{asset('assets/front/images/blog/3.jpg')}}" alt="Blog" /></a>
                             <div class="meta-details">
                                 <img class="thumb" src="{{asset('assets/front/images/blog/b6.jpg')}}" alt="Author" />
                                 <span>BY TIM NORTON</span>
@@ -574,8 +487,7 @@
                             </div>
                             <div class="row">
                                 <div class="col-12">
-                                    <textarea name="message" id="message" placeholder="Type Message"
-                                        rows="5"></textarea>
+                                    <textarea name="message" id="message" placeholder="Type Message" rows="5"></textarea>
                                 </div>
                             </div>
                             <div class="row">
@@ -607,8 +519,7 @@
                             <div class="footer-widget f-about">
                                 <div class="logo">
                                     <a href="index.html">
-                                        <img src="{{asset('assets/front/images/logo.svg')}}" alt="#"
-                                            class="img-fluid" />
+                                        <img src="{{asset('assets/front/images/logo.svg')}}" alt="#" class="img-fluid" />
                                     </a>
                                 </div>
                                 <p class=" text-white">
@@ -641,44 +552,55 @@
     <script src="{{asset('assets/front/js/tiny-slider.js')}}"></script>
 
     <script>
-    //===== close navbar-collapse when a  clicked
-    let navbarTogglerNine = document.querySelector(
-        ".navbar-nine .navbar-toggler"
-    );
-    navbarTogglerNine.addEventListener("click", function() {
-        navbarTogglerNine.classList.toggle("active");
-    });
+        //===== close navbar-collapse when a  clicked
+        let navbarTogglerNine = document.querySelector(
+            ".navbar-nine .navbar-toggler"
+        );
+        navbarTogglerNine.addEventListener("click", function() {
+            navbarTogglerNine.classList.toggle("active");
+        });
 
-    // ==== left sidebar toggle
-    let sidebarLeft = document.querySelector(".sidebar-left");
-    let overlayLeft = document.querySelector(".overlay-left");
-    let sidebarClose = document.querySelector(".sidebar-close .close");
+        // ==== left sidebar toggle
+        let sidebarLeft = document.querySelector(".sidebar-left");
+        let overlayLeft = document.querySelector(".overlay-left");
+        let sidebarClose = document.querySelector(".sidebar-close .close");
 
-    overlayLeft.addEventListener("click", function() {
-        sidebarLeft.classList.toggle("open");
-        overlayLeft.classList.toggle("open");
-    });
-    sidebarClose.addEventListener("click", function() {
-        sidebarLeft.classList.remove("open");
-        overlayLeft.classList.remove("open");
-    });
+        overlayLeft.addEventListener("click", function() {
+            sidebarLeft.classList.toggle("open");
+            overlayLeft.classList.toggle("open");
+        });
+        sidebarClose.addEventListener("click", function() {
+            sidebarLeft.classList.remove("open");
+            overlayLeft.classList.remove("open");
+        });
 
-    // ===== navbar nine sideMenu
-    let sideMenuLeftNine = document.querySelector(".navbar-nine .menu-bar");
+        // ===== navbar nine sideMenu
+        let
 
-    sideMenuLeftNine.addEventListener("click", function() {
-        sidebarLeft.classList.add("open");
-        overlayLeft.classList.add("open");
-    });
 
-    //========= glightbox
-    GLightbox({
-        'href': 'https://www.youtube.com/watch?v=r44RKWyfcFw&fbclid=IwAR21beSJORalzmzokxDRcGfkZA1AtRTE__l5N4r09HcGS5Y6vOluyouM9EM',
-        'type': 'video',
-        'source': 'youtube', //vimeo, youtube or local
-        'width': 900,
-        'autoplayVideos': true,
-    });
+
+
+
+
+
+
+
+
+            sideMenuLeftNine = document.querySelector(".navbar-nine .menu-bar");
+
+        sideMenuLeftNine.addEventListener("click", function() {
+            sidebarLeft.classList.add("open");
+            overlayLeft.classList.add("open");
+        });
+
+        //========= glightbox
+        GLightbox({
+            'href': 'https://www.youtube.com/watch?v=r44RKWyfcFw&fbclid=IwAR21beSJORalzmzokxDRcGfkZA1AtRTE__l5N4r09HcGS5Y6vOluyouM9EM',
+            'type': 'video',
+            'source': 'youtube', //vimeo, youtube or local
+            'width': 900,
+            'autoplayVideos': true,
+        });
     </script>
 </body>
 
