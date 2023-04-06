@@ -269,8 +269,12 @@
                     <div class="col-12">
                         <div class="content">
                             <h6>Services</h6>
-                            <h2 class="fw-bold">Our Best Services</h2>
+                            <h2 class="fw-bold">
+
+                                Our Best Services
+                            </h2>
                             <p>
+
                                 There are many variations of passages of Lorem Ipsum available,
                                 but the majority have suffered alteration in some form.
                             </p>
@@ -288,7 +292,7 @@
                 <div class="col-lg-4 col-md-6">
                     <div class="single-services">
                         <div class="service-icon">
-                            <i class="lni lni-capsule"></i>
+                            <i class="{{ $service->icon }}"></i>
                         </div>
                         <div class="service-content">
                             <h4>{{$service->title}}</h4>
@@ -468,35 +472,66 @@
                                 </div>
                             </div>
                         </div>
-                        <form action="#" class="contact-form">
+                        @if(session('success'))
+                        <div class="alert alert-success">{{ session('success') }}</div>
+                        @endif
+                        <form method="post" action="{{ route('contact.send') }}" class="contact-form">
+                            @csrf
                             <div class="row">
                                 <div class="col-md-6">
-                                    <input type="text" name="name" id="name" placeholder="Name" required />
-                                </div>
-                                <div class="col-md-6">
-                                    <input type="email" name="email" id="email" placeholder="Email" required />
-                                </div>
-                            </div>
-                            <div class="row">
-                                <div class="col-md-6">
-                                    <input type="text" name="phone" id="phone" placeholder="Phone" required />
-                                </div>
-                                <div class="col-md-6">
-                                    <input type="text" name="subject" id="email" placeholder="Subject" required />
-                                </div>
-                            </div>
-                            <div class="row">
-                                <div class="col-12">
-                                    <textarea name="message" id="message" placeholder="Type Message" rows="5"></textarea>
-                                </div>
-                            </div>
-                            <div class="row">
-                                <div class="col-12">
-                                    <div class="button text-center rounded-buttons">
-                                        <button type="submit" class="btn primary-btn rounded-full">
-                                            Send Message
-                                        </button>
+                                    <input type="text" placeholder="Name" class="form-control {{ $errors->has('name') ? 'error' : '' }}" name="name" id="name">
+                                    <!-- Error -->
+                                    @if ($errors->has('name'))
+                                    <div class="error">
+                                        {{ $errors->first('name') }}
                                     </div>
+                                    @endif
+                                </div>
+                                <div class="col-md-6">
+                                    <input type="email" placeholder="Email" class="form-control {{ $errors->has('email') ? 'error' : '' }}" name="email" id="email">
+                                    @if ($errors->has('email'))
+                                    <div class="error">
+                                        {{ $errors->first('email') }}
+                                    </div>
+                                    @endif
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-6">
+
+                                    <input type="text" placeholder="Phone" class="form-control {{ $errors->has('phone') ? 'error' : '' }}" name="phone" id="phone">
+                                    @if ($errors->has('phone'))
+                                    <div class="error">
+                                        {{ $errors->first('phone') }}
+                                    </div>
+                                    @endif
+                                </div>
+                                <div class="col-md-6">
+
+                                    <input type="text" placeholder="Subject" class="form-control {{ $errors->has('subject') ? 'error' : '' }}" name="subject" id="subject">
+                                    @if ($errors->has('subject'))
+                                    <div class="error">
+                                        {{ $errors->first('subject') }}
+                                    </div>
+                                    @endif
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-12">
+
+                                    <textarea class="form-control {{ $errors->has('message') ? 'error' : '' }}" name="message" placeholder="Type Message" id="message" rows="4"></textarea>
+                                    @if ($errors->has('message'))
+                                    <div class="error">
+                                        {{ $errors->first('message') }}
+                                    </div>
+                                    @endif
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-12">
+                                    <button type="submit" name="send" value="Submit" class="btn primary-btn rounded-full">
+                                        Send Message
+                                    </button>
                                 </div>
                             </div>
                         </form>
@@ -576,6 +611,33 @@
 
         // ===== navbar nine sideMenu
         let
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 

@@ -2,10 +2,10 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Service;
+use App\Models\Blog;
 use Illuminate\Http\Request;
 
-class ServiceController extends Controller
+class BlogController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -14,13 +14,8 @@ class ServiceController extends Controller
      */
     public function index()
     {
-        $service = Service::get();
-        return view(
-            'admin.services.index',
-            [
-                'services' => $service,
-            ]
-        );
+        $blog = Blog::all();
+        return view('blogs.index', compact('blogs'));
     }
 
     /**
@@ -30,10 +25,9 @@ class ServiceController extends Controller
      */
     public function create()
     {
-        $service = new Service;
-
-        return view('admin.services.create', compact('service'));
+        return view('blogs.create');
     }
+
     /**
      * Store a newly created resource in storage.
      *
@@ -42,13 +36,7 @@ class ServiceController extends Controller
      */
     public function store(Request $request)
     {
-        $service = new Service;
-        $service->title = $request->title;
-        $service->description = $request->description;
-        $service->icon = $request->icon;
-        $service->save();
-        dd($service);
-        return redirect()->route('services.index');
+        //
     }
 
     /**
@@ -59,8 +47,7 @@ class ServiceController extends Controller
      */
     public function show($id)
     {
-        $service = Service::findOrFail($id);
-        return view('admin.services.show', compact('service'));
+        //
     }
 
     /**
@@ -71,8 +58,7 @@ class ServiceController extends Controller
      */
     public function edit($id)
     {
-        $service = Service::findOrFail($id);
-        return view('admin.services.edit', compact('service'));
+        //
     }
 
     /**
@@ -84,12 +70,7 @@ class ServiceController extends Controller
      */
     public function update(Request $request, $id)
     {
-        $service = Service::findOrFail($id);
-        $service->title = $request->title;
-        $service->description = $request->description;
-        $service->icon = $request->icon;
-        $service->save();
-        return redirect()->route('services.index');
+        //
     }
 
     /**
@@ -100,8 +81,6 @@ class ServiceController extends Controller
      */
     public function destroy($id)
     {
-        $service = Service::findOrFail($id);
-        $service->delete();
-        return redirect()->route('services.index');
+        //
     }
 }

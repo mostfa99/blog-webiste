@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\ContactController;
 use App\Http\Controllers\HomepageController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\ServiceController;
@@ -30,7 +31,9 @@ Route::middleware('auth')->group(function () {
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
 });
 
-Route::get('/home', [HomepageController::class, 'index'])->middleware('auth');
+Route::get('/home', [HomepageController::class, 'index']);
+Route::get('/contact', [ContactController::class, 'show'])->name('contact.show');
+Route::post('/contact', [ContactController::class, 'send'])->name('contact.send');
 
 // Route::get('/dashbord', function(){
 // return view('admin.dashbord');
@@ -40,6 +43,7 @@ Route::resource('/dashbord/services', ServiceController::class)
     ->middleware('auth');
 
 
+Route::post('/dashboard/services/create', [ServiceController::class, 'store'])->name('admin.services.store');
 
 
 require __DIR__ . '/auth.php';
