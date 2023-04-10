@@ -285,6 +285,39 @@ scratch. This page gets rid of all links and provides the needed markup only.
                                 </li>
                             </ul>
                         </li>
+                        <li class="nav-item menu-close">
+                            <a href="{{route('contact')}}" class="nav-link">
+                                <i class="nav-icon fas fa-tachometer-alt"></i>
+                                <p>
+                                    Posts
+                                    <i class="right fas fa-angle-left"></i>
+                                </p>
+                            </a>
+                            <ul class="nav nav-treeview">
+                                <li class="nav-item">
+                                    <a href="{{route('posts.index')}}" class="nav-link ">
+                                        <i class="far fa-circle nav-icon"></i>
+                                        <p>All posts</p>
+                                    </a>
+                                </li>
+                            </ul>
+                            <ul class="nav nav-treeview">
+                                <li class="nav-item">
+                                    <a href="{{route('postsdetails.index')}}" class="nav-link ">
+                                        <i class="far fa-circle nav-icon"></i>
+                                        <p>edit Post Details </p>
+                                    </a>
+                                </li>
+                            </ul>
+                            <ul class="nav nav-treeview">
+                                <li class="nav-item">
+                                    <a href="{{route('posts.create')}}" class="nav-link ">
+                                        <i class="far fa-circle nav-icon"></i>
+                                        <p>create posts</p>
+                                    </a>
+                                </li>
+                            </ul>
+                        </li>
                     </ul>
                 </nav>
                 <!-- /.sidebar-menu -->

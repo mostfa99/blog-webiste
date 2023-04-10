@@ -316,11 +316,14 @@
                     <div class="col-12">
                         <div class="content">
                             <h6>latest news</h6>
-                            <h2 class="fw-bold">Latest News & Blog</h2>
+                            @foreach ($postsdetails as $postsdetail)
+                            <h2 class="fw-bold">
+                                {{$postsdetail->title}}
+                            </h2>
                             <p>
-                                There are many variations of passages of Lorem Ipsum available,
-                                but the majority have suffered alteration in some form.
+                                {{$postsdetail->content}}
                             </p>
+                            @endforeach
                         </div>
                     </div>
                 </div>
@@ -331,79 +334,29 @@
         <!--======  End Section Title Five ======-->
         <div class="container">
             <div class="row">
+                @foreach ($posts as $post )
                 <div class="col-lg-4 col-md-6 col-12">
                     <!-- Single News -->
                     <div class="single-news">
                         <div class="image">
-                            <a href="javascript:void(0)"><img class="thumb" src="{{asset('assets/front/images/blog/1.jpg')}}" alt="Blog" /></a>
+                            <a href="javascript:void(0)"><img class="thumb" src="{{ asset('storage/images/' . $post->image) }}" alt="Blog" /></a>
                             <div class="meta-details">
-                                <img class="thumb" src="{{asset('assets/front/images/blog/b6.jpg')}}" alt="Author" />
-                                <span>BY TIM NORTON</span>
+                                <img class="thumb" src="{{ asset('storage/images/' . $post->image) }}" alt="Author" />
+                                <span>{{$user->name}}</span>
                             </div>
                         </div>
                         <div class="content-body">
                             <h4 class="title">
-                                <a href="javascript:void(0)"> Make your team a Design driven company </a>
+                                <a href="javascript:void(0)">{{$post->title}} </a>
                             </h4>
                             <p>
-                                Lorem Ipsum is simply dummy text of the printing and
-                                typesetting industry. Lorem Ipsum has been the industry's
-                                standard.
+                                {{$post->body}}
                             </p>
                         </div>
                     </div>
-                    <!-- End Single News -->
                 </div>
-                <div class="col-lg-4 col-md-6 col-12">
-                    <!-- Single News -->
-                    <div class="single-news">
-                        <div class="image">
-                            <a href="javascript:void(0)"><img class="thumb" src="{{asset('assets/front/images/blog/2.jpg')}}" alt="Blog" /></a>
-                            <div class="meta-details">
-                                <img class="thumb" src="{{asset('assets/front/images/blog/b6.jpg')}}" alt="Author" />
-                                <span>BY TIM NORTON</span>
-                            </div>
-                        </div>
-                        <div class="content-body">
-                            <h4 class="title">
-                                <a href="javascript:void(0)">
-                                    The newest web framework that changed the world
-                                </a>
-                            </h4>
-                            <p>
-                                Lorem Ipsum is simply dummy text of the printing and
-                                typesetting industry. Lorem Ipsum has been the industry's
-                                standard.
-                            </p>
-                        </div>
-                    </div>
-                    <!-- End Single News -->
-                </div>
-                <div class="col-lg-4 col-md-6 col-12">
-                    <!-- Single News -->
-                    <div class="single-news">
-                        <div class="image">
-                            <a href="javascript:void(0)"><img class="thumb" src="{{asset('assets/front/images/blog/3.jpg')}}" alt="Blog" /></a>
-                            <div class="meta-details">
-                                <img class="thumb" src="{{asset('assets/front/images/blog/b6.jpg')}}" alt="Author" />
-                                <span>BY TIM NORTON</span>
-                            </div>
-                        </div>
-                        <div class="content-body">
-                            <h4 class="title">
-                                <a href="javascript:void(0)">
-                                    5 ways to improve user retention for your startup
-                                </a>
-                            </h4>
-                            <p>
-                                Lorem Ipsum is simply dummy text of the printing and
-                                typesetting industry. Lorem Ipsum has been the industry's
-                                standard.
-                            </p>
-                        </div>
-                    </div>
-                    <!-- End Single News -->
-                </div>
+                @endforeach
+                <!-- End Single News -->
             </div>
         </div>
     </div>
@@ -611,6 +564,19 @@
 
         // ===== navbar nine sideMenu
         let
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
