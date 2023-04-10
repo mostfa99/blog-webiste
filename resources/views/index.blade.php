@@ -410,7 +410,7 @@
                     </div>
                 </div>
                 <div class="col-xl-8">
-                    <div class="contact-form-wrapper">
+                    <div class="contact-form-wrapper mb-4">
                         <div class="row">
                             <div class="col-xl-10 col-lg-8 mx-auto">
                                 <div class="section-title text-center">
@@ -515,7 +515,8 @@
                                     hierarchies.
                                 </p>
                                 <p class="copyright-text text-white">
-                                    <span>© 2024 Business. Designed and Developed</span>
+                                    <span>© 2023 Blog. Designed and Developed by <a style="color: #e1e1e1;" href="https://github.com/mostfa99" target="_blank">Eng. Mostafa
+                                            Alfarra</a></span>
                                 </p>
                             </div>
                             <!-- End Single Widget -->
@@ -555,6 +556,11 @@
 
         overlayLeft.addEventListener("click", function() {
             sidebarLeft.classList.toggle("open");
+
+
+
+
+
             overlayLeft.classList.toggle("open");
         });
         sidebarClose.addEventListener("click", function() {
@@ -563,66 +569,7 @@
         });
 
         // ===== navbar nine sideMenu
-        let
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-            sideMenuLeftNine = document.querySelector(".navbar-nine .menu-bar");
-
+        let sideMenuLeftNine = document.querySelector(".navbar-nine .menu-bar");
         sideMenuLeftNine.addEventListener("click", function() {
             sidebarLeft.classList.add("open");
             overlayLeft.classList.add("open");

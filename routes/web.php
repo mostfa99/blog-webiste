@@ -31,27 +31,28 @@ Route::get('/dashboard', function () {
     return view('dashboard');
 })->middleware(['auth', 'verified'])->name('dashboard');
 
-Route::middleware('auth')->group(function () {
-    Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
-    Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
-    Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
+Route::middleware('auth')
+    ->prefix('/dashboard')
+    ->group(function () {
+        Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
+        Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
+        Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
+        Route::resource('/services', ServiceController::class);
+        Route::post('/services/create', [ServiceController::class, 'store'])->name('admin.services.store');
+        Route::get('/contact', [ContactController::class, 'index'])->name('contact');
+        Route::resource('/servicesdetails', ServicesDetailsController::class);
+        Route::resource('/postsdetails', PostDetailsController::class);
+        Route::get('/settings', [SettingsController::class, 'create'])->name('settings');
+        Route::post('/settings', [SettingsController::class, 'store']);
 
-    Route::resource('/dashbord/services', ServiceController::class);
-    Route::post('/dashboard/services/create', [ServiceController::class, 'store'])->name('admin.services.store');
-    Route::get('/dashboard/contact', [ContactController::class, 'index'])->name('contact');
-    Route::resource('/dashboard/servicesdetails', ServicesDetailsController::class);
-    Route::resource('/dashboard/postsdetails', PostDetailsController::class);
-    Route::get('/dashboard/settings', [SettingsController::class, 'create'])->name('settings');
-    Route::post('/dashboard/settings', [SettingsController::class, 'store']);
-
-    Route::get('/dashbord/posts/create', [PostController::class, 'create'])->name('posts.create');
-    Route::get('/dashbord/posts', [PostController::class, 'index'])->name('posts.index');
-    Route::get('/dashbord/posts/{post}', [PostController::class, 'show'])->name('posts.show');
-    Route::post('/dashbord/posts', [PostController::class, 'store'])->name('posts.store');
-    Route::get('/dashbord/posts/{post}/edit', [PostController::class, 'edit'])->name('posts.edit');
-    Route::put('/dashbord/posts/{post}', [PostController::class, 'update'])->name('posts.update');
-    Route::delete('/dashbord/posts/{post}', [PostController::class, 'destroy'])->name('posts.destroy');
-});
+        Route::get('/posts/create', [PostController::class, 'create'])->name('posts.create');
+        Route::get('/posts', [PostController::class, 'index'])->name('posts.index');
+        Route::get('/posts/{post}', [PostController::class, 'show'])->name('posts.show');
+        Route::post('/posts', [PostController::class, 'store'])->name('posts.store');
+        Route::get('/posts/{post}/edit', [PostController::class, 'edit'])->name('posts.edit');
+        Route::put('/posts/{post}', [PostController::class, 'update'])->name('posts.update');
+        Route::delete('/posts/{post}', [PostController::class, 'destroy'])->name('posts.destroy');
+    });
 
 Route::get('/home', [HomepageController::class, 'index'])->name('home');
 Route::get('/contact', [ContactController::class, 'show'])->name('contact.show');
