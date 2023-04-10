@@ -1,33 +1,7 @@
-@extends('components.layouts.admin')
+@extends('layouts.admin')
 @section('title', 'Display all Services')
 
 @section('content')
-<div class="row mb-3">
-    <div class="col-6">
-        <div class="content">
-            <h6>{{ __('Create New Service') }}</h6>
-            <form method="post" action="{{ route('services.store') }}" enctype="multipart/form-data">
-                @csrf
-                <div class="mb-3">
-                    <label for="subject" class="form-label">{{ __('Subject') }}</label>
-                    <input type="text" class="form-control @error('subject') is-invalid @enderror" id="subject" name="subject" value="{{ old('subject') }}" placeholder="{{ __('Enter service subject') }}" required>
-                    @error('subject')
-                    <div class="invalid-feedback">{{ $message }}</div>
-                    @enderror
-                </div>
-                <div class="mb-3">
-                    <label for="content" class="form-label">{{ __('Content') }}</label>
-                    <textarea class="form-control @error('content') is-invalid @enderror" id="content" name="content" rows="3" placeholder="{{ __('Enter service content') }}" required>{{ old('content') }}</textarea>
-                    @error('content')
-                    <div class="invalid-feedback">{{ $message }}</div>
-                    @enderror
-                </div>
-                <button type="submit" class="btn btn-primary">{{ __('Update') }}</button>
-            </form>
-        </div>
-    </div>
-</div>
-
 <div class="row mb-3">
     <div class="col-12">
         <div class="content">
@@ -70,6 +44,7 @@
                     </tr>
                     @endforeach
                 </tbody>
+
 
 
 

@@ -10,6 +10,11 @@ use Illuminate\Support\Facades\Mail;
 
 class ContactController extends Controller
 {
+    public function index()
+    {
+        $contacts = Contact::all();
+        return view('admin.contact.index', array('contacts' => $contacts));
+    }
     public function show()
     {
         return view('emails.contact');

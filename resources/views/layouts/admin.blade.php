@@ -213,7 +213,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
                                     </a>
                                 </li>
                                 <li class="nav-item">
-                                    <a href="#" class="nav-link">
+                                    <a href="{{route('contact')}}" class="nav-link">
                                         <i class="far fa-circle nav-icon"></i>
                                         <p>Contact Page</p>
                                     </a>
@@ -222,6 +222,12 @@ scratch. This page gets rid of all links and provides the needed markup only.
                                     <a href="#" class="nav-link">
                                         <i class="far fa-circle nav-icon"></i>
                                         <p>Blog Page</p>
+                                    </a>
+                                </li>
+                                <li class="nav-item">
+                                    <a href="{{route('settings')}}" class="nav-link">
+                                        <i class="far fa-circle nav-icon"></i>
+                                        <p>Settings </p>
                                     </a>
                                 </li>
                             </ul>
@@ -236,6 +242,18 @@ scratch. This page gets rid of all links and provides the needed markup only.
                             </a>
                             <ul class="nav nav-treeview">
                                 <li class="nav-item">
+                                    <a href="{{route('services.index')}}" class="nav-link ">
+                                        <i class="far fa-circle nav-icon"></i>
+                                        <p>all services</p>
+                                    </a>
+                                </li>
+                                <li class="nav-item">
+                                    <a href="{{route('servicesdetails.index')}}" class="nav-link ">
+                                        <i class="far fa-circle nav-icon"></i>
+                                        <p> services details</p>
+                                    </a>
+                                </li>
+                                <li class="nav-item">
                                     <a href="{{route('services.create')}}" class="nav-link ">
                                         <i class="far fa-circle nav-icon"></i>
                                         <p>create services</p>
@@ -249,7 +267,24 @@ scratch. This page gets rid of all links and provides the needed markup only.
                                 </li>
                             </ul>
                         </li>
-
+                        <!-- contact us massages  -->
+                        <li class="nav-item menu-close">
+                            <a href="{{route('contact')}}" class="nav-link">
+                                <i class="nav-icon fas fa-tachometer-alt"></i>
+                                <p>
+                                    ContactUs Messages
+                                    <i class="right fas fa-angle-left"></i>
+                                </p>
+                            </a>
+                            <ul class="nav nav-treeview">
+                                <li class="nav-item">
+                                    <a href="{{route('contact')}}" class="nav-link ">
+                                        <i class="far fa-circle nav-icon"></i>
+                                        <p>All Message</p>
+                                    </a>
+                                </li>
+                            </ul>
+                        </li>
                     </ul>
                 </nav>
                 <!-- /.sidebar-menu -->

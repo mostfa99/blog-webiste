@@ -9,7 +9,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
 
     <!--====== Title ======-->
-    <title>Business | Bootstrap 5 Business Template</title>
+    <title>{{config('app.name')}} </title>
+
 
     <!--====== Favicon Icon ======-->
     <link rel="shortcut icon" href="{{asset('assets/front/images/favicon.svg')}}" type="image/svg" />
@@ -38,7 +39,7 @@
             <div class="row">
                 <div class="col-lg-12">
                     <nav class="navbar navbar-expand-lg">
-                        <a class="navbar-brand" href="index.html">
+                        <a class="navbar-brand" href="{{route('home')}}">
                             <img src="{{asset('assets/front/images/white-logo.svg')}}" alt="Logo" />
                         </a>
                         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNine" aria-controls="navbarNine" aria-expanded="false" aria-label="Toggle navigation">
@@ -269,15 +270,14 @@
                     <div class="col-12">
                         <div class="content">
                             <h6>Services</h6>
+                            @foreach ($servicesdetails as $servicesdetail)
                             <h2 class="fw-bold">
-
-                                Our Best Services
+                                {{$servicesdetail->title}}
                             </h2>
                             <p>
-
-                                There are many variations of passages of Lorem Ipsum available,
-                                but the majority have suffered alteration in some form.
+                                {{$servicesdetail->content}}
                             </p>
+                            @endforeach
                         </div>
                     </div>
                 </div>
@@ -611,6 +611,13 @@
 
         // ===== navbar nine sideMenu
         let
+
+
+
+
+
+
+
 
 
 

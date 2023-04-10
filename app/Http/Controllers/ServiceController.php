@@ -47,7 +47,6 @@ class ServiceController extends Controller
         $service->description = $request->description;
         $service->icon = $request->icon;
         $service->save();
-        dd($service);
         return redirect()->route('services.index');
     }
 
