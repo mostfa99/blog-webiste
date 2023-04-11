@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\ContactController;
+use App\Http\Controllers\ContactDetailsController;
 use App\Http\Controllers\HomepageController;
 use App\Http\Controllers\PostController;
 use App\Http\Controllers\PostDetailsController;
@@ -52,6 +53,9 @@ Route::middleware('auth')
         Route::get('/posts/{post}/edit', [PostController::class, 'edit'])->name('posts.edit');
         Route::put('/posts/{post}', [PostController::class, 'update'])->name('posts.update');
         Route::delete('/posts/{post}', [PostController::class, 'destroy'])->name('posts.destroy');
+
+        Route::get('/contactdetails', [ContactDetailsController::class, 'index'])->name('contact.index');
+        Route::patch('/contactdetails', [ContactDetailsController::class, 'update'])->name('contact.update');
     });
 
 Route::get('/home', [HomepageController::class, 'index'])->name('home');

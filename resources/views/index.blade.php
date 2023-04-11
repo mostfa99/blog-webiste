@@ -370,6 +370,7 @@
                 <div class="col-xl-4">
                     <div class="contact-item-wrapper">
                         <div class="row">
+                            @foreach ($contactDetails as $contactDetail )
                             <div class="col-12 col-md-6 col-xl-12">
                                 <div class="contact-item">
                                     <div class="contact-icon">
@@ -377,8 +378,8 @@
                                     </div>
                                     <div class="contact-content">
                                         <h4>Contact</h4>
-                                        <p>0984537278623</p>
-                                        <p>yourmail@gmail.com</p>
+                                        <p>{{ $contactDetail->phone}}</p>
+                                        <p>{{ $contactDetail->email}}</p>
                                     </div>
                                 </div>
                             </div>
@@ -389,8 +390,8 @@
                                     </div>
                                     <div class="contact-content">
                                         <h4>Address</h4>
-                                        <p>175 5th Ave, New York, NY 10010</p>
-                                        <p>United States</p>
+                                        <p>{{ $contactDetail->address}}</p>
+                                        <p>{{ $contactDetail->country}}</p>
                                     </div>
                                 </div>
                             </div>
@@ -401,11 +402,12 @@
                                     </div>
                                     <div class="contact-content">
                                         <h4>Schedule</h4>
-                                        <p>24 Hours / 7 Days Open</p>
-                                        <p>Office time: 10 AM - 5:30 PM</p>
+                                        <p>{{ $contactDetail->schedule}}</p>
+                                        <p>Office time: {{ $contactDetail->office_time}}</p>
                                     </div>
                                 </div>
                             </div>
+                            @endforeach
                         </div>
                     </div>
                 </div>
@@ -556,6 +558,13 @@
 
         overlayLeft.addEventListener("click", function() {
             sidebarLeft.classList.toggle("open");
+
+
+
+
+
+
+
 
 
 

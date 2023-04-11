@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\ContactDetails;
 use App\Models\Post;
 use App\Models\PostsDetails;
 use App\Models\Service;
@@ -16,6 +17,7 @@ class HomepageController extends Controller
         $service = Service::get();
         $servicesdetails = ServicesDetails::get();
         $postsdetails = PostsDetails::get();
+        $contactDetails = ContactDetails::get();
         $posts = Post::get();
         $user = Auth::user();
         return view(
@@ -24,6 +26,7 @@ class HomepageController extends Controller
                 'services' => $service,
                 'servicesdetails' => $servicesdetails,
                 'postsdetails' => $postsdetails,
+                'contactDetails' => $contactDetails,
                 'posts' => $posts,
                 'user' =>  $user,
             ]
